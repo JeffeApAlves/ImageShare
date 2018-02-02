@@ -10,15 +10,15 @@
       <a class="navbar-brand" href="#">ImageShare</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <form class="navbar-form navbar-right" action="InitController?action=start_create_account" method = "POST">
+      <form class="navbar-form navbar-right" action="InitController" method = "POST">
         <div class="form-group">
           <input type="text" placeholder="Email" class="form-control">
         </div>
         <div class="form-group">
           <input type="password" placeholder="Password" class="form-control">
         </div>
-        <button type="submit" class="btn btn-success" value="sign_in">Sign in</button>
-        <button type="submit" class="btn btn-success" value="register">Register</button>
+        <button type="submit" class="btn btn-success" name="action" value="sign_in_account" >Sign in</button>
+        <button type="submit" class="btn btn-success" name="action" value="register_account" >Register</button>
       </form>
     </div><!--/.navbar-collapse -->
   </div>

@@ -30,15 +30,15 @@ public class InitController extends HttpServlet {
      * @param request
      * @param response
      * @throws ServletException
+     * @throws IOException 
      */
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException {
  
-       
         String action = request.getParameter("action");
  
         if (action == null) {
-            throw new ServletException("action=NUll. No action specified.");
-        } else if (action.equals("start_create_account")) {
+        	throw new ServletException("No action specified.");
+        } else if (action.equals("register_account")) {
             showCreateAccount(request, response);
         }
     }
@@ -66,8 +66,7 @@ public class InitController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		processRequest(request, response);
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -75,7 +74,6 @@ public class InitController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		processRequest(request, response);
 	}
 }
-	
